@@ -15,7 +15,7 @@ case "$1" in
     d) _emacs "$HOME/pkg/dwm/config.h" "$HOME/pkg/dwm/dwm.c" ;;
     b) _vim   "$HOME/pkg/dwmblocks/config.h" ;;
     e) _emacs "$HOME/.emacs.d/init.el" ;;
-    f) _emacs "$HOME/pkg/flybinds/config.h" "$HOME/pkg/flybinds/items.h" "$HOME/pkg/flybinds/flybinds.c";;
+    f) _emacs "$HOME/pkg/my-flybinds/config.h" "$HOME/pkg/my-flybinds/items.h" "$HOME/pkg/my-flybinds/flybinds.c";;
     v) _vim   "$HOME/.config/nvim/init.vim" ;;
     l) _vim   "$HOME/pkg/slock/config.h" ;;
     t) _vim   "$HOME/pkg/st/config.h" ;;

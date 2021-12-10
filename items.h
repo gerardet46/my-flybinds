@@ -112,6 +112,7 @@ static item toggle[] = {
     { "a", "xautolock" },
     { "b", "bluetooth" },
     { "c", "cups"      },
+    { "s", "ssh"       },
 };
 static item utils[] = {
     { "w", "wget"      },
