@@ -1,9 +1,21 @@
 #!/usr/bin/env sh
 
 toggle_service() {
-    sudo rc-service "$1" status &&
-        sudo rc-service "$1" stop ||
-        sudo rc-service "$1" start
+    if ls -l /sbin/init | grep openrc > /dev/null ; then
+        # openrc
+        if sudo rc-service "$1" status ; then
+            sudo rc-service "$1" stop
+        else
+            sudo rc-service "$1" start
+        fi
+    elif ls -l /sbin/init | grep systemctl > /dev/null ; then
+        # systemctl
+        if sudo systemctl "$1" status ; then
+            sudo systemctl "$1" stop
+        else
+            sudo systemctl "$1" start
+        fi
+    fi
 }
 
 case "$@" in
