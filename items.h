@@ -115,5 +115,6 @@ static item toggle[] = {
     { "s", "ssh"       },
 };
 static item utils[] = {
+    { "i", "xinput"    },
     { "w", "wget"      },
 };
