@@ -2,4 +2,5 @@
 
 case "$1" in
     w) "$HOME/scripts/wget.sh" ;;
+    i) xinput --disable $(xinput | grep Mouse | awk -F'=' '{print $2}' | awk '{print $1}') ;;
 esac
