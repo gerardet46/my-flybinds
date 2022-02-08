@@ -110,6 +110,7 @@ static item edit[] = {
 };
 static item toggle[] = {
     { "a", "xautolock" },
+    { "k", "screenkey" },
     { "b", "bluetooth" },
     { "c", "cups"      },
     { "s", "ssh"       },

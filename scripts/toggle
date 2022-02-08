@@ -23,6 +23,12 @@ case "$@" in
         killall xautolock ||
         xautolock -time 7 -locker slock &
             ;;
+
+    k) pgrep screenkey &&
+        killall screenkey ||
+        screenkey &
+            ;;
+
     b) toggle_service bluetoothd ;;
     c) toggle_service cupsd ;;
     s) toggle_service sshd ;;
