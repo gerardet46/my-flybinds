@@ -1,7 +1,7 @@
 # my build of flybinds
 Modifications:
 - Integration with gcolors
-- All menus and scripts included (see `scripts` folder)
+- All menus and scripts included (see `scripts` folder and copy all them to `~/scripts/flybinds/`)
 - Better organization with new `items.h` file
 
 # flybinds
