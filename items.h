@@ -118,4 +118,9 @@ static item toggle[] = {
 static item utils[] = {
     { "i", "xinput"    },
     { "w", "wget"      },
+    { "k", "kill"      },
+};
+static item xkbmap[] = {
+    { "e", "es"    },
+    { "l", "latex" },
 };

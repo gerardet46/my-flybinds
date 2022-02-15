@@ -4,6 +4,12 @@ Modifications:
 - All menus and scripts included (see `scripts` folder and copy all them to `~/scripts/flybinds/`)
 - Better organization with new `items.h` file
 
+- No copy a `latex` keyboard modification of `es` keyboard, execute
+```bash
+sudo cp scripts/latex /usr/share/X11/xkb/symbols
+setxkbmap latex
+```
+
 # flybinds
 Create keyboard shortcuts (and show available combinations in top of screen) without holding
 modifier keys (ctrl, super, meta, ...)
