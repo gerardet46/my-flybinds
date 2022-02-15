@@ -45,5 +45,5 @@ static item items[] = {
     { "u",    "Utils",         SC("utils"),       0,   utils,      LENGTH(utils)     ,0 },
     { "t",    "Toggle",        SC("toggle"),      0,   toggle,     LENGTH(toggle)    ,0 },
     { "x",    "Tanca",         SC("power"),       0,   power,      LENGTH(power)     ,0 },
-    { "k",    "Kill",          "$HOME/scripts/kill.sh" },
+    { "k",    "xkbmap",        SC("xkbmap"),      0,   xkbmap,     LENGTH(xkbmap)    ,0},
 };
