@@ -34,7 +34,9 @@ static item power[] = {
     { "a", "Atura"    },
     { "r", "Reinicia" },
     { "b", "Bloqueja" },
-    { "s", "Surt"     },
+    { "h", "Hiberna"  },
+    { "s", "Suspèn"   },
+    { "x", "Surt"     },
 };
 static item dwm_gaps[] = {
     { "0", "Toggle",          },
