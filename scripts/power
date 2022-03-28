@@ -4,5 +4,7 @@ case "$1" in
     a) sudo poweroff ;;
     r) sudo reboot ;;
     b) slock & xset dpms force off ;;
-    s) i3-msg exit || killall dwm ;;
+    h) slock loginctl hibernate ;;
+    s) slock loginctl suspend ;;
+    x) i3-msg exit || killall dwm ;;
 esac
