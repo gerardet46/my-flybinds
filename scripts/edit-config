@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 
 _emacs() {
-    emacs "$@"
+    emacsclient -c "$@"
 }
 
 _vim() {
