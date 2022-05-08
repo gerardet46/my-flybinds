@@ -5,6 +5,6 @@ case "$1" in
     r) sudo reboot ;;
     b) slock & xset dpms force off ;;
     h) slock loginctl hibernate ;;
-    s) slock loginctl suspend ;;
+    s) slock loginctl "suspend" ;;
     x) i3-msg exit || killall dwm ;;
 esac
