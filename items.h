@@ -87,7 +87,6 @@ static item launch[] = {
 static item cron[] = {
     { "m", "Email",          "$HOME/scripts/cron/mail.sh &"  },
     { "d", "Drive",          "$HOME/scripts/cron/drive.sh &" },
-    { "u", "Pujar al Drive", "$HOME/scripts/cron/upload_drive.sh &" },
 };
 static item config[] = {
     { "r", "Ratolí",      SC("config/mouse"),       0, ratoli,      LENGTH(ratoli)     },
@@ -118,11 +117,6 @@ static item toggle[] = {
     { "s", "ssh"       },
 };
 static item utils[] = {
-    { "i", "xinput"    },
     { "w", "wget"      },
     { "k", "kill"      },
-};
-static item xkbmap[] = {
-    { "e", "es"    },
-    { "l", "latex" },
 };

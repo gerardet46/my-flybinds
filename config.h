@@ -13,11 +13,11 @@ static const char *maxkey      = "p";
 #include <gcolors.h>
 #define BACKGROUND COL_0
 static const char *colors[SchemeLast][2] = {
-	/*                 fg                     bg       */
-	[SchemeKey]    = { COL_VERD/*"#bbbbbb"*/, BACKGROUND },
-	[SchemeSep]    = { COL_BLAU/*"#000000"*/, BACKGROUND },
-	[SchemeDesc]   = { COL_BLANC/*"#eeeeee"*/, BACKGROUND },
-	[SchemeBorder] = { COL_BLANC/*"#eeeeee"*/, COL_FOSC },
+	/*                 fg         bg       */
+	[SchemeKey]    = { COL_VERD,  BACKGROUND },
+	[SchemeSep]    = { COL_BLAU,  BACKGROUND },
+	[SchemeDesc]   = { COL_BLANC, BACKGROUND },
+	[SchemeBorder] = { COL_BLANC, COL_FOSC },
 };
 /* -c option, if nonzero flybinds will set this number of colums. If not, it's calculated */
 static unsigned int columns        = 6;
@@ -35,15 +35,14 @@ static unsigned int borderpx       = 2;
 /* keyname, text, script, childs */
 /* parent items */
 static item items[] = {
-    /* keyname  description    path to script keep open?  childs      childs length     */
+    /* keyname  description    path to script keep open?  childs      childs length  vertical   */
     { "l",    "Llançador",     SC("launcher"),    0,   launch,     LENGTH(launch)    ,0 },
     { "c",    "Configuració",  NULL,              0,   config,     LENGTH(config)    ,0 },
-    { "e",    "Edita config",  SC("edit-config"), 0,   edit,       LENGTH(edit)      ,1 },
+    { "e",    "Edita config",  "edit-dot-file"                                          },
     { "d",    "DWM",           SC("dwm"),         0,   dwm,        LENGTH(dwm)       ,0 },
     { "s",    "Spotify",       SC("spotify"),     0,   spotify,    LENGTH(spotify)   ,0 },
     { "y",    "Sync",          NULL,              0,   cron,       LENGTH(cron)      ,0 },
     { "u",    "Utils",         SC("utils"),       0,   utils,      LENGTH(utils)     ,0 },
     { "t",    "Toggle",        SC("toggle"),      0,   toggle,     LENGTH(toggle)    ,0 },
     { "x",    "Tanca",         SC("power"),       0,   power,      LENGTH(power)     ,0 },
-    { "k",    "xkbmap",        SC("xkbmap"),      0,   xkbmap,     LENGTH(xkbmap)    ,0},
 };
