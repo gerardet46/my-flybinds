@@ -8,6 +8,13 @@ toggle_service() {
         else
             sudo rc-service "$1" start
         fi
+    elif ls -l /sbin/init | grep runit > /dev/null ; then
+        # openrc
+        if sudo sv status "$1" ; then
+            rsv down "$1"
+        else
+            rsv up "$1"
+        fi
     elif ls -l /sbin/init | grep systemctl > /dev/null ; then
         # systemctl
         if sudo systemctl "$1" status ; then
@@ -32,4 +39,8 @@ case "$@" in
     b) toggle_service bluetoothd ;;
     c) toggle_service cupsd ;;
     s) toggle_service sshd ;;
+    t) pgrep xcompmgr &&
+        killall xcompmgr ||
+        xcompmgr &
+            ;;
 esac

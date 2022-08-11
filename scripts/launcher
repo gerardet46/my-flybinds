@@ -4,22 +4,25 @@ _browser() {
     [ -z "$1" ] || xdg-open "$1" &
 }
 
+_telegram() {
+    which telegram-desktop >/dev/null && telegram-desktop || /opt/Telegram/Telegram &
+}
+
 _main() {
     case "$@" in
         w) $BROWSER & ;;
         f) st -e nnn ;;
-        d) "$HOME/scripts/dbrowse.sh" ;;
-        t) telegram-desktop ;;
+        d) dbrowse ;;
+        t) _telegram ;;
         m) st -e neomutt ; pkill -RTMIN+12 dwmblocks ;;
         e) emacsclient -c ;;
         c) st -e calcurse ;;
 
         x)
             _browser "https://web.whatsapp.com"
-            _browser "https://instagram.com"
             _browser "https://studio.youtube.com"
-            "$HOME/scripts/cron/mail.sh" &
-            telegram-desktop
+            "$HOME/sc/cron/mail.sh" &
+            _telegram
             ;;
 
         "u e") _browser "https://bit.ly/EntradaAT" ;;

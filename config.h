@@ -27,7 +27,7 @@ static unsigned int outpaddingvert = 15;
 static unsigned int borderpx       = 2;
 
 
-#define SC(path) "$HOME/scripts/flybinds/" #path
+#define SC(path) "$HOME/sc/flybinds/" #path
 
 #include "items.h"
 
@@ -38,7 +38,7 @@ static item items[] = {
     /* keyname  description    path to script keep open?  childs      childs length  vertical   */
     { "l",    "Llançador",     SC("launcher"),    0,   launch,     LENGTH(launch)    ,0 },
     { "c",    "Configuració",  NULL,              0,   config,     LENGTH(config)    ,0 },
-    { "e",    "Edita config",  "edit-dot-file"                                          },
+    { "e",    "Edita config",  "edit-dot-file" },
     { "d",    "DWM",           SC("dwm"),         0,   dwm,        LENGTH(dwm)       ,0 },
     { "s",    "Spotify",       SC("spotify"),     0,   spotify,    LENGTH(spotify)   ,0 },
     { "y",    "Sync",          NULL,              0,   cron,       LENGTH(cron)      ,0 },

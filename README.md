@@ -1,12 +1,12 @@
 # my build of flybinds
 Modifications:
 - Integration with gcolors
-- All menus and scripts included (see `scripts` folder and copy all them to `~/scripts/flybinds/`)
+- All menus and scripts included (see `scripts` folder and copy all them to `~/sc/flybinds/`)
 - Better organization with new `items.h` file
 
 - No copy a `latex` keyboard modification of `es` keyboard, execute
 ```bash
-sudo cp scripts/latex /usr/share/X11/xkb/symbols
+sudo cp sc/latex /usr/share/X11/xkb/symbols
 setxkbmap latex
 ```
 
