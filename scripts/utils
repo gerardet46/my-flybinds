@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 
 case "$1" in
-    w) "$HOME/scripts/wget.sh" ;;
-    i) xinput --disable $(xinput | grep Mouse | awk -F'=' '{print $2}' | awk '{print $1}') ;;
-    k) "$HOME/scripts/kill.sh" ;;
+    w) gwget ;;
+    i) xinput --disable $(xinput | grep "4 Mouse" | awk -F'=' '{print $2}' | awk '{print $1}') ;;
+    k) gkill ;;
 esac

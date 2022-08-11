@@ -85,8 +85,8 @@ static item launch[] = {
     { "u", "UIB"             , NULL, 0, uib, LENGTH(uib) },
 };
 static item cron[] = {
-    { "m", "Email",          "$HOME/scripts/cron/mail.sh &"  },
-    { "d", "Drive",          "$HOME/scripts/cron/drive.sh &" },
+    { "m", "Email",          "$HOME/sc/cron/mail.sh &"  },
+    { "d", "Drive",          "$HOME/sc/cron/drive.sh &" },
 };
 static item config[] = {
     { "r", "Ratolí",      SC("config/mouse"),       0, ratoli,      LENGTH(ratoli)     },
@@ -115,6 +115,7 @@ static item toggle[] = {
     { "b", "bluetooth" },
     { "c", "cups"      },
     { "s", "ssh"       },
+    { "t", "xcompmgr"  },
 };
 static item utils[] = {
     { "w", "wget"      },
