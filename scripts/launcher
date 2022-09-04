@@ -1,7 +1,8 @@
 #!/usr/bin/env sh
 
 _browser() {
-    [ -z "$1" ] || xdg-open "$1" &
+    B=${BROWSER:-xdg-open}
+    [ -z "$1" ] || $B "$@" &
 }
 
 _telegram() {
@@ -17,18 +18,6 @@ _main() {
         m) st -e neomutt ; pkill -RTMIN+12 dwmblocks ;;
         e) emacsclient -c ;;
         c) st -e calcurse ;;
-
-        x)
-            _browser "https://web.whatsapp.com"
-            _browser "https://studio.youtube.com"
-            "$HOME/sc/cron/mail.sh" &
-            _telegram
-            ;;
-
-        "u e") _browser "https://bit.ly/EntradaAT" ;;
-        "u s") _browser "https://bit.ly/SortidaAT" ;;
-        "u a") _browser "https://ad.uib.es/estudis2122/my/" ;;
-        "u c") _browser "https://academic.uib.es" ;;
     esac
 }
 
