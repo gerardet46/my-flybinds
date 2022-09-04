@@ -4,21 +4,28 @@ static int topbar = 1;                      /* -b  option; if 0, dmenu appears a
 static int showhint = 1;                    /* 1 to show key hints, 0 doesn't display them */
 
 /* -fn option overrides fonts[0]; default X11 font or font set */
+static char font[] = "monospace:size=12";
 static const char *fonts[] = {
-	"Ubuntu:size=13"
+    font,
+	"monospace:size=12"
 };
-static const char *sep         = "->";    /* -s option; set the separator between key and text */
-static const char *maxkey      = "p";
+static char sep[]        = "->";    /* -s option; set the separator between key and text */
+static char *maxkey      = "p";
+static char background[] = "#000000"; /* global background */
+static char keyfg[]      = "#00ff00"; /* key name foreground */
+static char sepfg[]      = "#00ffff"; /* separator foreground */
+static char descfg[]     = "#ffffff"; /* description foreground */
+static char bordercol[]  = "#ff0000"; /* border color */
+ 
+static char *colors[SchemeLast][2] = {
+	/*                 fg          bg       */
+	[SchemeKey]    = { keyfg,      background }, /* fg for key */
+	[SchemeSep]    = { sepfg,      background }, /* fg for separator (->) */
+	[SchemeDesc]   = { descfg,     background }, /* fg for description */
+	[SchemeBorder] = { background, bordercol  }, /* bg for border */
+};
+ 
 
-#include <gcolors.h>
-#define BACKGROUND COL_0
-static const char *colors[SchemeLast][2] = {
-	/*                 fg         bg       */
-	[SchemeKey]    = { COL_VERD,  BACKGROUND },
-	[SchemeSep]    = { COL_BLAU,  BACKGROUND },
-	[SchemeDesc]   = { COL_BLANC, BACKGROUND },
-	[SchemeBorder] = { COL_BLANC, COL_FOSC },
-};
 /* -c option, if nonzero flybinds will set this number of colums. If not, it's calculated */
 static unsigned int columns        = 6;
 static unsigned int colpadding     = 100;
@@ -26,6 +33,24 @@ static unsigned int outpaddinghor  = 25;
 static unsigned int outpaddingvert = 15;
 static unsigned int borderpx       = 2;
 
+/*
+ * Xresources preferences to load at startup (the class to use is "flybinds")
+ */
+ResourcePref resources[] = {
+	{ "font",           STRING,  &font },
+	{ "separator",      STRING,  &sep },
+	{ "background",     STRING,  &background },
+	{ "keyfg",          STRING,  &keyfg },
+	{ "sepfg",          STRING,  &sepfg },
+	{ "descfg",         STRING,  &descfg },
+	{ "bordercol",      STRING,  &bordercol },
+	{ "maxcolumns",     INTEGER, &columns },
+	{ "colpadding",     INTEGER, &colpadding },
+	{ "outpaddinghor",  INTEGER, &outpaddinghor },
+	{ "outpaddingvert", INTEGER, &outpaddingvert },
+	{ "borderpx",       INTEGER, &borderpx },
+};
+ 
 
 #define SC(path) "$HOME/sc/flybinds/" #path
 
@@ -39,10 +64,10 @@ static item items[] = {
     { "l",    "Llançador",     SC("launcher"),    0,   launch,     LENGTH(launch)    ,0 },
     { "c",    "Configuració",  NULL,              0,   config,     LENGTH(config)    ,0 },
     { "e",    "Edita config",  "edit-dot-file" },
+    { "g",    "Gravadora",     NULL,              0,   record,     LENGTH(record)    ,0 },
     { "d",    "DWM",           SC("dwm"),         0,   dwm,        LENGTH(dwm)       ,0 },
-    { "s",    "Spotify",       SC("spotify"),     0,   spotify,    LENGTH(spotify)   ,0 },
+    { "s",    "Música",        SC("music"),       0,   music,      LENGTH(music)     ,0 },
     { "y",    "Sync",          NULL,              0,   cron,       LENGTH(cron)      ,0 },
-    { "u",    "Utils",         SC("utils"),       0,   utils,      LENGTH(utils)     ,0 },
     { "t",    "Toggle",        SC("toggle"),      0,   toggle,     LENGTH(toggle)    ,0 },
     { "x",    "Tanca",         SC("power"),       0,   power,      LENGTH(power)     ,0 },
 };
