@@ -22,7 +22,13 @@ static item audio[] = {
     { "1", "I/O: Analog",           },
     { "2", "O: HDMI 2, I: Analog",  },
 };
-static item spotify[] = {
+static item record[] = {
+    { "s", "screencast", "ffrecord screencast" },
+    { "v", "video",      "ffrecord video"      },
+    { "a", "audio",      "ffrecord audio"      },
+    { "k", "kill",       "ffrecord kill"       },
+};
+static item music[] = {
     { "␣", ""   },
     { "n", ""   },
     { "p", ""   },
@@ -66,23 +72,15 @@ static item dwm[] = {
     { "b", "Borders", NULL, 1, dwm_borders, LENGTH(dwm_borders) },
     { "g", "Gaps",    NULL, 1, dwm_gaps,    LENGTH(dwm_gaps)    },
 };
-static item uib[] = {
-    { "a", "Aula digital"  },
-    { "c", "Academic"      },
-    { "e", "Entrar biblio" },
-    { "s", "Sortir biblio" },
-};
 
 static item launch[] = {
-    { "w", "WWW (Brave)"       },
+    { "w", "WWW"       },
     { "f", "Fitxers (nnn)"     },
     { "d", "Fitxers (dbrowse)" },
     { "m", "Email (neomutt)"   },
     { "e", "Emacs"             },
     { "t", "Telegram"          },
-    { "x", "Xarxes"            },
     { "c", "Calcurse"          },
-    { "u", "UIB"             , NULL, 0, uib, LENGTH(uib) },
 };
 static item cron[] = {
     { "m", "Email",          "$HOME/sc/cron/mail.sh &"  },
@@ -92,8 +90,8 @@ static item config[] = {
     { "r", "Ratolí",      SC("config/mouse"),       0, ratoli,      LENGTH(ratoli)     },
     { "m", "Monitors",    SC("config/monitors"),    0, monitors,    LENGTH(monitors)   },
     { "a", "Audio",       SC("config/audio"),       0, audio,       LENGTH(audio)      },
-    { "w", "Wallpaper",   "sxiv /usr/share/wallpapers"                                 },
-    { "t", "Tema",        SC("../theme.sh")                                            },
+    { "w", "Wallpaper",   "nsxiv /usr/share/wallpapers"                                },
+    { "t", "Tema",        "colordmenu"                                                 },
 };
 static item edit[] = {
     { "m", "dmenu"     },
@@ -116,8 +114,4 @@ static item toggle[] = {
     { "c", "cups"      },
     { "s", "ssh"       },
     { "t", "xcompmgr"  },
-};
-static item utils[] = {
-    { "w", "wget"      },
-    { "k", "kill"      },
 };
