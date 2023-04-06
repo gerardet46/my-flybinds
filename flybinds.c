@@ -31,7 +31,7 @@
 			       + drw_fontset_getwidth(drw, (X)->text) + lrpad)
 
 /* enums */
-enum { SchemeKey, SchemeDesc, SchemeSep, SchemeBorder, SchemeLast }; /* color schemes */
+enum { SchemeKey, SchemeTitle, SchemeDesc, SchemeSep, SchemeBorder, SchemeLast }; /* color schemes */
 
 typedef struct {
     unsigned int mod;
@@ -201,14 +201,19 @@ cleanup(void)
     XCloseDisplay(dpy);
 }
 
-static int
-drawitem(item *item, int x, int y, int w)
+static int drawitem(item *item, int x, int y, int w)
 {
-   drw_setscheme(drw, scheme[SchemeKey]);
+    if (item->keyname[0] == '#') {
+        drw_setscheme(drw, scheme[SchemeTitle]);
+        y += titlepadding;
+        return drw_text(drw, x, y, w, bh, lrpad / 2, item->text, 0);
+    }
+    
+    drw_setscheme(drw, scheme[SchemeKey]);
     drw_text(drw, x, y, w, bh, lrpad / 2, item->keyname, 0);
 
     x += TEXTW(maxkey);
-    
+
     drw_setscheme(drw, scheme[SchemeSep]);
     drw_text(drw, x, y, w, bh, lrpad / 2, sep, 0);
 

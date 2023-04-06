@@ -1,12 +1,3 @@
-static item incdec[] = {
-    { "h", "Decrementa", NULL, 1 },
-    { "l", "Incrementa", NULL, 1 },
-};
-static item incdec0[] = {
-    { "0", "Def / Toggle",   NULL, 1 },
-    { "h", "Decrementa",     NULL, 1 },
-    { "l", "Incrementa",     NULL, 1 },
-};
 static item ratoli[] = {
     { "d", "Dreta"    },
     { "e", "Esquerra" },
@@ -23,10 +14,10 @@ static item audio[] = {
     { "2", "O: HDMI 2, I: Analog",  },
 };
 static item record[] = {
-    { "s", "screencast", "ffrecord screencast" },
-    { "v", "video",      "ffrecord video"      },
-    { "a", "audio",      "ffrecord audio"      },
-    { "k", "kill",       "ffrecord kill"       },
+    { "s", "screencast", "dm-ffrecord screencast" },
+    { "v", "video",      "dm-ffrecord video"      },
+    { "a", "audio",      "dm-ffrecord audio"      },
+    { "k", "kill",       "dm-ffrecord kill"       },
 };
 static item music[] = {
     { "␣", ""   },
@@ -43,6 +34,11 @@ static item power[] = {
     { "h", "Hiberna"  },
     { "s", "Suspèn"   },
     { "x", "Surt"     },
+};
+static item emacs[] = {
+    { "e", "Emacs"    },
+    { "f", "Elfeed" },
+    { "m", "mu4e" },
 };
 static item dwm_gaps[] = {
     { "0", "Toggle",          },
@@ -72,15 +68,9 @@ static item dwm[] = {
     { "b", "Borders", NULL, 1, dwm_borders, LENGTH(dwm_borders) },
     { "g", "Gaps",    NULL, 1, dwm_gaps,    LENGTH(dwm_gaps)    },
 };
-
 static item launch[] = {
-    { "w", "WWW"       },
-    { "f", "Fitxers (nnn)"     },
     { "d", "Fitxers (dbrowse)" },
-    { "m", "Email (neomutt)"   },
-    { "e", "Emacs"             },
     { "t", "Telegram"          },
-    { "c", "Calcurse"          },
 };
 static item cron[] = {
     { "m", "Email",          "$HOME/sc/cron/mail.sh &"  },
@@ -91,7 +81,7 @@ static item config[] = {
     { "m", "Monitors",    SC("config/monitors"),    0, monitors,    LENGTH(monitors)   },
     { "a", "Audio",       SC("config/audio"),       0, audio,       LENGTH(audio)      },
     { "w", "Wallpaper",   "nsxiv /usr/share/wallpapers"                                },
-    { "t", "Tema",        "colordmenu"                                                 },
+    { "t", "Tema",        "dm-color"                                                   },
 };
 static item edit[] = {
     { "m", "dmenu"     },
@@ -114,4 +104,15 @@ static item toggle[] = {
     { "c", "cups"      },
     { "s", "ssh"       },
     { "t", "xcompmgr"  },
+    { "w", "wallpaper" },
+};
+static item tabbed[] = {
+    {"#", "XDOTOOL"           },
+    {"c", "Crea"              },
+    {"a", "Afegeix"           },
+    {"d", "Elimina principal" },
+    {"#", "DMENU"             },
+    {"C", "Crea"              },
+    {"A", "Afegeix"           },
+    {"D", "Elimina principal" },
 };
