@@ -77,3 +77,7 @@ static item items[] = {
     { "T",    "Tabbed",        SC("tabbed"),     0,   tabbed,     LENGTH(tabbed)    ,1 },
     { "x",    "Tanca",         SC("power"),      0,   power,      LENGTH(power)     ,0 },
 };
+
+//static item mitems[] = {
+    //{"m", "main", NULL, 0, itmain, LENGTH(itmain), 0}
+//};

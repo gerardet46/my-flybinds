@@ -295,18 +295,18 @@ spawn(char* sc, char** args)
     sprintf(command, "%s %s %s %s %s %s %s %s %s", sc, args[0], args[1], args[2], args[3], args[4], args[5], args[6], args[7]);
 
     char *v[] = {
-	"/bin/sh",
-	"-c",
-	command,
-	NULL
+        "/bin/sh",
+        "-c",
+        command,
+        NULL
     };
     if (fork() == 0) {
-	if (dpy)
-	    close(ConnectionNumber(dpy));
-	setsid();
-	execvp(v[0], v);
-	fprintf(stderr, "flybinds: execvp %s", v[0]);
-	perror(" failed");
+        if (dpy)
+            close(ConnectionNumber(dpy));
+        setsid();
+        execvp(v[0], v);
+        fprintf(stderr, "flybinds: execvp %s", v[0]);
+        perror(" failed");
     }
 }
 
@@ -355,6 +355,7 @@ navigate(char* keyname) {
                     argc = -2;
 
                     aux = itstack;
+
                     while (aux) {
                         /* search script name */
                         nextarg = aux->it->keyname;
@@ -362,6 +363,7 @@ navigate(char* keyname) {
 
                         if (aux->it->script && strlen(aux->it->script) > 0) {
                             /* change to this script */
+
                             sc = aux->it;
                             for (argc = 0; argc < 8; argc++)
                                 arg[argc] = "";
