@@ -3,10 +3,11 @@ static item ratoli[] = {
     { "e", "Esquerra" },
 };
 static item monitors[] = {
-    { "p", "Portàtil" },
-    { "h", "HDMI"     },
-    { "d", "Doble"    },
-    { "a", "Altres"   },
+    { "p", "Portàtil"         },
+    { "h", "HDMI"             },
+    { "d", "Doble (eDP-HDMI)" },
+    { "D", "Doble (HDMI-eDP)" },
+    { "a", "Altres (arandr)"  },
 };
 static item audio[] = {
     { "m", "Mixer",                 },
@@ -77,11 +78,12 @@ static item cron[] = {
     { "d", "Drive",          "$HOME/sc/cron/drive.sh &" },
 };
 static item config[] = {
-    { "r", "Ratolí",      SC("config/mouse"),       0, ratoli,      LENGTH(ratoli)     },
-    { "m", "Monitors",    SC("config/monitors"),    0, monitors,    LENGTH(monitors)   },
-    { "a", "Audio",       SC("config/audio"),       0, audio,       LENGTH(audio)      },
-    { "w", "Wallpaper",   "nsxiv /usr/share/wallpapers"                                },
-    { "t", "Tema",        "dm-color"                                                   },
+    { "r", "Ratolí",         SC("config/mouse"),       0, ratoli,      LENGTH(ratoli)     },
+    { "m", "Monitors",       SC("config/monitors"),    0, monitors,    LENGTH(monitors)   },
+    { "a", "Audio",          SC("config/audio"),       0, audio,       LENGTH(audio)      },
+    { "w", "Wallpaper",      "setwallpaper"                                               },
+    { "W", "Tria wallpaper", "nsxiv /usr/share/wallpapers"                                },
+    { "t", "Tema",           "dm-color"                                                   },
 };
 static item edit[] = {
     { "m", "dmenu"     },
@@ -105,6 +107,7 @@ static item toggle[] = {
     { "s", "ssh"       },
     { "t", "xcompmgr"  },
     { "w", "wallpaper" },
+    { "i", "internet"  },
 };
 static item tabbed[] = {
     {"#", "XDOTOOL"           },
@@ -115,4 +118,5 @@ static item tabbed[] = {
     {"C", "Crea"              },
     {"A", "Afegeix"           },
     {"D", "Elimina principal" },
+    {"x", "Elimina totes" },
 };
