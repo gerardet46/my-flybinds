@@ -1,9 +1,11 @@
 static Key keys[] = {
     /* special */
-    { 0, XK_space, "␣"    },
+    { 0, XK_space,  "␣"   },
     { 0, XK_Return, "\\n" },
     { 0, XK_period, "."   },
     { 0, XK_comma,  ","   },
+    { 0, XK_plus,   "+"   },
+    { 0, XK_minus,  "-"   },
 
     /* numbers */
     { 0, XK_0, "0" },

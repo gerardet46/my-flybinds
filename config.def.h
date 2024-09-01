@@ -1,7 +1,6 @@
 /* See LICENSE file for copyright and license details. */
 /* Default settings; can be overriden by command line. */
 static int topbar = 1;                      /* -b  option; if 0, dmenu appears at bottom     */
-static int showhint = 1;                    /* 1 to show key hints, 0 doesn't display them */
 
 /* -fn option overrides fonts[0]; default X11 font or font set */
 static char font[] = "monospace:size=12";
@@ -9,13 +8,14 @@ static const char *fonts[] = {
     font,
 	"monospace:size=12"
 };
-static char sep[]        = "->";    /* -s option; set the separator between key and text */
-static char *maxkey      = "\\n";   /* max-length of key */
-static char background[] = "#000000"; /* global background */
-static char keyfg[]      = "#00ff00"; /* key name foreground */
-static char sepfg[]      = "#00ffff"; /* separator foreground */
-static char descfg[]     = "#ffffff"; /* description foreground */
-static char bordercol[]  = "#ff0000"; /* border color */
+static char sep[]           = "->";    /* -s option; set the separator between key and text */
+static char *maxkey         = "\\n";   /* max-length of key */
+static char background[]    = "#000000"; /* global background */
+static char keyfg[]         = "#00ff00"; /* key name foreground */
+static char sepfg[]         = "#00ffff"; /* separator foreground */
+static char descfg[]        = "#ffffff"; /* description foreground */
+static char bordercol[]     = "#ff0000"; /* border color */
+static unsigned int backkey = XK_Left;   /* backwards key */
 
 static char *colors[SchemeLast][2] = {
 	/*                 fg          bg       */

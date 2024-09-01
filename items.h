@@ -4,7 +4,7 @@ static item ratoli[] = {
 };
 static item monitors[] = {
     { "p", "Portàtil"         },
-    { "h", "HDMI"             },
+    { "m", "HDMI"             },
     { "d", "Doble (eDP-HDMI)" },
     { "D", "Doble (HDMI-eDP)" },
     { "a", "Altres (arandr)"  },
@@ -32,7 +32,7 @@ static item power[] = {
     { "a", "Atura"    },
     { "r", "Reinicia" },
     { "b", "Bloqueja" },
-    { "h", "Hiberna"  },
+    { "q", "Hiberna"  },
     { "s", "Suspèn"   },
     { "x", "Surt"     },
 };
@@ -62,8 +62,8 @@ static item dwm_gaps[] = {
 };
 static item dwm_borders[] = {
     { "s", "Smart toogle", },
-    { "h", "Decrementa",   },
-    { "l", "Incrementa",   },
+    { "-", "Decrementa",   },
+    { "+", "Incrementa",   },
 };
 static item dwm[] = {
     { "b", "Borders", NULL, 1, dwm_borders, LENGTH(dwm_borders) },
