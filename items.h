@@ -38,8 +38,9 @@ static item power[] = {
 };
 static item emacs[] = {
     { "e", "Emacs"    },
-    { "f", "Elfeed" },
-    { "m", "mu4e" },
+    { "f", "Elfeed"   },
+    { "m", "mu4e"     },
+	{ "n", "Org Roam" }
 };
 static item dwm_gaps[] = {
     { "0", "Toggle",          },

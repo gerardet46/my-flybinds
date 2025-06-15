@@ -142,16 +142,9 @@ push(item *it) {
     newnode->it = it;
     newnode->next = NULL;
 
-    if (!itstack) {
-	/* create "master" node */
-	stack *master = (struct stack*)malloc(sizeof(struct stack));
-	master->it = items;
-	master->prev = NULL;
-	itstack = master;
-    }
     stack *aux = itstack;
     while (aux->next)
-	aux = aux->next;
+        aux = aux->next;
 
     newnode->prev = aux;
     aux->next = newnode;
@@ -344,7 +337,6 @@ navigate(char* keyname) {
                             cleanup();
                             exit(0);
                         }
-                        goto Drawmenu;
                     }
 
                     /* if not, search it */
@@ -391,14 +383,11 @@ navigate(char* keyname) {
                         exit(1);
                     }
                 }
-
-                goto Drawmenu;
+                break;
             }
             temp++;
         }
     }
- Drawmenu:
-    drawmenu();
 }
 
 static void
@@ -422,14 +411,12 @@ keypress(XKeyEvent *ev)
     }
 
     int i;
-    for (i = 0; i < LENGTH(keys); i++)
+    for (i = 0; i < LENGTH(keys); i++) {
         if (ksym == keys[i].keysym && (keys[i].mod | 16) == (ev->state | 16)) {
-            /*char* keyname = getKeyName(keys[i].mod, keys[i].keysym);*/
-            char* keyname = keys[i].name;
-
-            navigate(keyname);
- 
+            navigate(keys[i].name);
+            break;
         }
+    }
  Drawmenu:
     drawmenu();
 }
@@ -638,6 +625,10 @@ main(int argc, char *argv[])
 
 	parent = items;
 	total = LENGTH(items);
+
+	itstack = (struct stack *)malloc(sizeof(struct stack));
+	itstack->it = items;
+	itstack->prev = NULL;
 
 	for (i = 1; i < argc; i++)
 		/* these options take no arguments */
